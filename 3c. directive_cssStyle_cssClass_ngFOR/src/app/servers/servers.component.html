@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Servers Component</h1>
+            <h6>Button will get enabled within 2sec</h6>
+            <label>Server name</label>
+            <input type="text" 
+            class="form-control" [(ngModel)] = "serverName" >
+                <button class="btn btn-primary"
+                (click)='onCreateServer()'>
+                Add  Server
+            </button>
+
+            <h1>ngStyle</h1>
+            <p [ngStyle]="{backgroundColor:getColor()}">
+                {{serverName}} is with if {{serverId}} online
+            </p>
+
+            <h1>ngClass</h1>
+            <p [ngClass]="{online:serverStatus==='online'}">
+                {{serverName}} is with if {{serverId}} online
+            </p>
+
+            <h1>ngFOR</h1>
+            <app-server *ngFor="let server of servers"></app-server>
+    </div>
+</div>
