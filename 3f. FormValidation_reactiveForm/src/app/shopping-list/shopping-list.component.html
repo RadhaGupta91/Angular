@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-xs-10">
+        
+        <!-- <app-shopping-edit></app-shopping-edit> -->
+        <div class="row">
+            <div class="col-md-12">
+                <form [formGroup]="registerForm" (submit)="addData()">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="name">Name</label>
+                            <input type="hidden" formControlName="id" name= "id" placeholder="id" class="form-control">
+                            <input type="text" formControlName="name" name= "name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                            <div *ngIf="submitted && f.name.errors" class="text-danger">
+                                <div *ngIf="f.name.errors.required">First Name is required</div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-2">
+                            <label for="amount">Amount</label>
+                            <input type="text" formControlName="amount" name="amount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }">
+                            <div *ngIf="submitted && f.amount.errors" class="text-danger">
+                                <div *ngIf="f.amount.errors.required">Amount is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="submit" class="btn btn-success" value ="Add">
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class= "container">
+            <div *ngFor = "let ingredient of ingredients">
+                <div class= "row">
+                    <div class= "col-md-1">
+                        {{ingredient.id}}
+                    </div>
+                    <div class= "col-md-2">
+                        {{ingredient.amount}}
+                    </div>
+                    <div class= "col-md-3">
+                        {{ingredient.name}}
+                    </div>
+                    <div class= "col-md-3">
+                        <input type="button" value="Delete" (click)="deleteContact(ingredient.id)" class='btn btn-danger'>
+                         &nbsp;
+                         <input type="button" value="Edit" (click)="editContact(ingredient.id)" class='btn btn-danger'>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+        <ul class="list-group">
+            <a href="#" class="list-group-item" style="cursor:pointer" 
+            *ngFor= "let ingredient of ingredients">
+            {{ingredient.id}} | {{ingredient.name}} | {{ingredient.amount}}
+            </a>
+        </ul>
+    </div>
+</div>
