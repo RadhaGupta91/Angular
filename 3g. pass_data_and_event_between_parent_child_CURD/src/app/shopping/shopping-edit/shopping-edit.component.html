@@ -1,0 +1,21 @@
+<form (submit)="addData()">
+    <div class="row">
+        <div class="col-md-5">
+            <label for="name">Name</label>
+            <input type="hidden" [(ngModel)] = "id" name= "id" placeholder="id" class="form-control">
+            <input type="text" [(ngModel)] = "name" name= "name" class="form-control">
+        </div>
+
+        <div class="col-md-2">
+            <label for="amount">Amount</label>
+            <input type="text" [(ngModel)] = "amount" name="amount" class="form-control">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="submit" class="btn btn-success" value ={{buttonName}}>
+            <button type="reset" class="btn btn-default">Clear</button>
+        </div>
+    </div>
+</form>
