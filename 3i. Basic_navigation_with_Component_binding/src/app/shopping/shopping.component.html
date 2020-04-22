@@ -1,0 +1,15 @@
+<h3>Shopping Items</h3>        
+<!-- Add form -->
+<app-shopping-edit
+    (onAddData) = "onAdd($event)"
+    [item] = item>
+</app-shopping-edit>
+<hr>    
+<!-- Print List -->
+
+<app-shopping-list 
+    *ngFor = "let ingredient of ingredients"
+    [ingredient] = ingredient
+    (onDeleteData) = "onDelete($event)"
+    (onEditData) = "onEdit($event)">
+</app-shopping-list>
