@@ -13,7 +13,6 @@ export class RecipeItemComponent implements OnInit {
   constructor() { }
 
   onSelected(){
-    debugger;
     this.recipeSelected.emit();
   }
   ngOnInit(): void {

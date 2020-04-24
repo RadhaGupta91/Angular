@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>I'm in AppComponent</h1>
+      <hr>
+      <button class="btn btn-success" (click)="onlyOdd = !onlyOdd">Print either Even or odd Number</button>
+      </div>
+      <div class="col-md-12"
+      *ngIf="onlyOdd">
+        <ul class="list-group">
+          <li class="list-group-item"
+              *ngFor="let ele of oddNumbers"
+              [ngClass] = "{odd:ele%2!==0}">
+            {{ ele }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-12"
+      *ngIf="!onlyOdd">
+        <ul class="list-group">
+          <li class="list-group-item"
+              *ngFor="let ele of evenNumbers"
+              [ngClass] = "{even:ele%2==0}">
+            {{ ele }}
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div appBasicHighLight>  I am basic directive </div>
+  <div appBetterHighLight>  I am a better directive </div>
+</div>  

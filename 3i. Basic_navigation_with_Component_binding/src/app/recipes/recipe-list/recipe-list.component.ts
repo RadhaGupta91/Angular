@@ -17,7 +17,6 @@ export class RecipeListComponent implements OnInit {
 
   onRecipeSelected(recipeDetail:Recipe)
   {
-    debugger;
     this.recipeWasSelected.emit(recipeDetail);
   }
   
