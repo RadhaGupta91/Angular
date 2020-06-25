@@ -1,0 +1,13 @@
+<app-header
+(featureEmitter) = "appFeatureEmitter($event)">
+</app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>I'm in AppComponent</h1>
+      <hr>
+      <app-recipes *ngIf= "loadedFeature==='recipe'"></app-recipes>
+      <app-shopping *ngIf= "loadedFeature!=='recipe'"></app-shopping>
+      </div>
+  </div>
+</div>  

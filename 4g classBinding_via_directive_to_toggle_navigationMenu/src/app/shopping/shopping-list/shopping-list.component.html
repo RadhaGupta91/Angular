@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-10">
+        <div class= "container">
+            <div class= "row">
+                <div class= "col-md-2">
+                    {{ingredient.amount}}
+                </div>
+                <div class= "col-md-3">
+                    {{ingredient.name}}
+                </div>
+                <div class= "col-md-3">
+                    <input type="button" value="Delete" (click)="deleteData(ingredient.id)" class='btn btn-danger'>
+                        &nbsp;
+                        <input type="button" value="Edit" (click)="editData(ingredient)" class='btn btn-danger'>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
