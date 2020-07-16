@@ -1,0 +1,17 @@
+<a style='cursor:pointer' class="list-group-item clearfix" 
+    [routerLink]="[recipe.id]"
+    routerLinkActive="active"
+    >
+    <!-- routerLink='/recipes/{{recipe.id}}' -->
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ recipe.name}}</h4>
+        <p class="list-group-item-text">{{ recipe.description}}</p>
+    </div>
+    <span class="pull-right">
+        <!-- String Interpolation approach -->
+        <!-- <img src="{{ recipe.imagePath}}" alt="{{ recipe.name}}" class="img-responsive" style="max-width: 50px;"> -->
+        <!-- Property Binding approach -->
+        <img [src]=recipe.imagePath alt="{{ recipe.name}}" class="img-responsive" style="max-width: 50px;">
+        <font class="id">#{{ recipe.id}}#</font> 
+    </span>
+</a>
