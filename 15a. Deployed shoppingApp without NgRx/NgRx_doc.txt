@@ -1,0 +1,4 @@
+NgRx
+
+Run below command to install the package
+npm install --save @ngrx/store
